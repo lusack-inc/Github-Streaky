@@ -100,9 +100,9 @@ To run the script daily at 11:50 PM, follow these steps:
 
         - name: Run contribution check script
         env:
-            GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+            GITHUB_USERNAME: ${{ secrets.USERNAME }}
             REPO_NAME: ${{ secrets.REPO_NAME }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
             python main.py
     ```
@@ -112,3 +112,12 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 ### Acknowledgements
 
 [PyGithub](https://github.com/PyGithub/PyGithub)  - Used for interacting with the GitHub API.
+
+### What I learned
+- Intro to GitHub API 
+- Github Actions & Workflows
+
+
+<br/>
+
+# My Streaky Logs

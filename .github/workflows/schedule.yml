@@ -1,0 +1,31 @@
+name: Daily Contribution Check
+
+on:
+  schedule:
+    - cron: "50 23 * * *" # Runs every day at 11:50 PM UTC
+
+jobs:
+  check-contributions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run contribution check script
+        env:
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          REPO_NAME: ${{ secrets.REPO_NAME }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          python main.py
