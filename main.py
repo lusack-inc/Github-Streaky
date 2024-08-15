@@ -6,9 +6,9 @@ from github import Github, GithubException
 
 # Load environment variables
 load_dotenv()
-GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
+GITHUB_USERNAME = os.getenv("USERNAME")
 REPO_NAME = os.getenv("REPO_NAME")
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_TOKEN = os.getenv("ACCESS_TOKEN")
 
 g = Github(GITHUB_TOKEN)
 user = g.get_user()
