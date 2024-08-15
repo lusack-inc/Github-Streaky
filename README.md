@@ -116,6 +116,8 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 ### What I learned
 - Intro to GitHub API 
 - Github Actions & Workflows
+- Cron
+- YAML 
 
 
 <br/>
