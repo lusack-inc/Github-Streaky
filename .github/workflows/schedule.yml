@@ -46,8 +46,8 @@ jobs:
 
       - name: Run contribution check script
         env:
-          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          USERNAME: ${{ secrets.USERNAME }}
           REPO_NAME: ${{ secrets.REPO_NAME }}
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           python main.py
