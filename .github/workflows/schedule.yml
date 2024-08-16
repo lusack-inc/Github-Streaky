@@ -1,6 +1,7 @@
 name: Daily Contribution Check
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "50 23 * * *" # Runs every day at 11:50 PM UTC
 
