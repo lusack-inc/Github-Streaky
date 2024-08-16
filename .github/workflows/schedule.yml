@@ -18,31 +18,31 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
       - name: Check if secrets are set
         run: |
-          if [ -z "$USERNAME" ]; then
-            echo "USERNAME is not set"
+          if [ -z "${{ secrets.USERNAME }}" ]; then
+            echo "GITHUB_USERNAME is not set"
             exit 1
           else
-            echo "USERNAME is set"
+            echo "GITHUB_USERNAME is set"
           fi
-          if [ -z "$REPO_NAME" ]; then
+          if [ -z "${{ secrets.REPO_NAME }}" ]; then
             echo "REPO_NAME is not set"
             exit 1
           else
             echo "REPO_NAME is set"
           fi
-          if [ -z "$ACCESS_TOKEN" ]; then
-            echo "ACCESS_TOKEN is not set"
+          if [ -z "${{ secrets.ACCESS_TOKEN }}" ]; then
+            echo "GITHUB_TOKEN is not set"
             exit 1
           else
-            echo "ACCESS_TOKEN is set"
+            echo "GITHUB_TOKEN is set"
           fi
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run contribution check script
         env:
