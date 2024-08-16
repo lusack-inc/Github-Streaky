@@ -1,4 +1,4 @@
-# Github-Streaky
+# Github-Streaky 😭
 
 Github Streaky is a Python script that helps you maintain your GitHub contribution streak. It checks if you've made any commits for the day and, if not, automatically updates a specified repository's README file to record the date you missed. This ensures you never miss a day in your contribution streak. It's cheeky, so we call it Github Streaky 🤦‍♂️
 
