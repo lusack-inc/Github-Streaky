@@ -21,6 +21,26 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          - name: Check if secrets are set
+          run: |
+            if [ -z "$GITHUB_USERNAME" ]; then
+              echo "GITHUB_USERNAME is not set"
+              exit 1
+            else
+              echo "GITHUB_USERNAME is set"
+            fi
+            if [ -z "$REPO_NAME" ]; then
+              echo "REPO_NAME is not set"
+              exit 1
+            else
+              echo "REPO_NAME is set"
+            fi
+            if [ -z "$GITHUB_TOKEN" ]; then
+              echo "GITHUB_TOKEN is not set"
+              exit 1
+            else
+              echo "GITHUB_TOKEN is set"
+            fi
 
       - name: Run contribution check script
         env:
