@@ -25,11 +25,11 @@ jobs:
 
       - name: Check if secrets are set
         run: |
-          if [ -z "$GITHUB_USERNAME" ]; then
-            echo "GITHUB_USERNAME is not set"
+          if [ -z "$USERNAME" ]; then
+            echo "USERNAME is not set"
             exit 1
           else
-            echo "GITHUB_USERNAME is set"
+            echo "USERNAME is set"
           fi
           if [ -z "$REPO_NAME" ]; then
             echo "REPO_NAME is not set"
@@ -37,11 +37,11 @@ jobs:
           else
             echo "REPO_NAME is set"
           fi
-          if [ -z "$GITHUB_TOKEN" ]; then
-            echo "GITHUB_TOKEN is not set"
+          if [ -z "$ACCESS_TOKEN" ]; then
+            echo "ACCESS_TOKEN is not set"
             exit 1
           else
-            echo "GITHUB_TOKEN is set"
+            echo "ACCESS_TOKEN is set"
           fi
 
       - name: Run contribution check script
