@@ -48,8 +48,6 @@ def update_readme():
         readme.path, f"Updated README.md on {today}", new_content, readme.sha
     )
 
-    print(readme)
-
 
 if __name__ == "__main__":
     if made_contribution():
